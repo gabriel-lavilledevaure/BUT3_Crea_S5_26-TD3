@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 /**
  * ## Exercice 6 : AnimatePresence (Sortie)
  * **Objectif** : Animer la disparition d'un élément.
@@ -23,9 +23,16 @@ export default function Exercice6() {
         {isVisible ? "Masquer" : "Afficher"}
       </button>
 
-      {isVisible && (
-        <div className="h-32 w-32 rounded-2xl bg-indigo-400 shadow-xl" />
-      )}
+      <AnimatePresence mode="popLayout">
+        {isVisible && (
+          <motion.div
+            className="h-32 w-32 rounded-2xl bg-indigo-400 shadow-xl"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0, rotate: 90 }}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }

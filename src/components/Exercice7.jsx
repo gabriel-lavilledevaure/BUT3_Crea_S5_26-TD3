@@ -21,7 +21,7 @@ export default function Exercice7() {
           isExpanded ? "h-full w-full" : "h-24 w-24"
         } flex items-center justify-center overflow-hidden`}
       >
-        <span className="font-bold text-white uppercase tracking-tighter">
+        <span className="font-bold tracking-tighter text-white uppercase">
           {isExpanded ? "Click to shrink" : "Expand"}
         </span>
       </div>
