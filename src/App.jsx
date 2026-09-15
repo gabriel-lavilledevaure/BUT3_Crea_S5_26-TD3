@@ -2,6 +2,8 @@ import Exercice0 from "./components/Exercice0";
 import Exercice1 from "./components/Exercice1";
 import Exercice2 from "./components/Exercice2";
 import Exercice3 from "./components/Exercice3";
+import Exercice4 from "./components/Exercice4";
+import Exercice6 from "./components/Exercice6";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <Exercice1 />
         <Exercice2 />
         <Exercice3 />
+        <Exercice4 />
+        <Exercice6 />
       </div>
     </section>
   );

@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 /**
  * ## Exercice 6 : AnimatePresence (Sortie)
  * **Objectif** : Animer la disparition d'un élément.
@@ -10,10 +11,13 @@ import { useState } from "react";
 export default function Exercice6() {
   const [isVisible, setIsVisible] = useState(true);
 
+  const handleToggle = () => {
+    setIsVisible(!isVisible);
+  };
   return (
     <div className="flex aspect-square flex-col items-center justify-center gap-10 rounded-lg bg-slate-800">
       <button
-        onClick={() => setIsVisible(!isVisible)}
+        onClick={handleToggle}
         className="cursor-pointer rounded-lg bg-indigo-600 px-6 py-2 font-medium text-white transition-colors hover:bg-indigo-500"
       >
         {isVisible ? "Masquer" : "Afficher"}
