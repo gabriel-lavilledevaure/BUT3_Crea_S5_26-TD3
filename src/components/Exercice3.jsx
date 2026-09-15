@@ -6,12 +6,26 @@ import { motion } from "motion/react";
  * - Configurer une transition de type `spring` (ressort) avec `stiffness` et `damping`.
  * - Utiliser des noms de variants sémantiques (`rest`, `hover`, `tap`).
  */
+
 export default function Exercice3() {
+  const variantsButton = {
+    rest: { scale: 1 },
+    hover: { scale: 2 },
+    tap: { scale: 0.95 },
+  };
+
   return (
     <div className="flex aspect-square items-center justify-center gap-10 rounded-lg bg-slate-800">
-      <button className="w-1/2 cursor-pointer rounded-lg bg-emerald-600 py-4 text-2xl font-light tracking-wide text-gray-100">
+      <motion.button
+        variants={variantsButton}
+        initial="rest"
+        whileHover="hover"
+        whileTap="tap"
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        className="w-1/2 cursor-pointer rounded-lg bg-emerald-600 py-4 text-2xl font-light tracking-wide text-gray-100"
+      >
         subscribe
-      </button>
+      </motion.button>
     </div>
   );
 }
