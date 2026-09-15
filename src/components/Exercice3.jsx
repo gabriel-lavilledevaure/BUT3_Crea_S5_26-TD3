@@ -9,9 +9,17 @@ import { motion } from "motion/react";
 
 export default function Exercice3() {
   const variantsButton = {
-    rest: { scale: 1 },
-    hover: { scale: 2 },
-    tap: { scale: 0.95 },
+    rest: { scale: 1, backgroundColor: "#059669" },
+    hover: {
+      scale: 1.1,
+      backgroundColor: "#10B981",
+      transition: { type: "spring", stiffness: 300, damping: 20 },
+    },
+    tap: {
+      scale: 0.9,
+      backgroundColor: "#047857",
+      transition: { type: "spring", stiffness: 300, damping: 20 },
+    },
   };
 
   return (
@@ -21,7 +29,6 @@ export default function Exercice3() {
         initial="rest"
         whileHover="hover"
         whileTap="tap"
-        transition={{ type: "spring", stiffness: 400, damping: 17 }}
         className="w-1/2 cursor-pointer rounded-lg bg-emerald-600 py-4 text-2xl font-light tracking-wide text-gray-100"
       >
         subscribe
